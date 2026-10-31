@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Accident Pattern Mining</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">T</span>
+      <div>
+        <h1>Traffic Accident Mining</h1>
+        <p>DATA ANALYTICS DASHBOARD</p>
+      </div>
+    </div>
+    <span class="status"><span></span> Local System</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">DATA MINING PROJECT</p>
+      <h2>Traffic Accident<br><span>Pattern Analysis</span></h2>
+      <p class="description">
+        Explore accident trends, discover frequent conditions,
+        and analyze patterns in historical traffic data.
+      </p>
+      <button id="refreshButton">Check Server Connection</button>
+      <p id="serverMessage" class="message">
+        Ready to connect to the server.
+      </p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <p>Total Accident Records</p>
+        <h3 id="totalRecords">—</h3>
+        <span>Dataset records</span>
+      </article>
+      <article class="stat-card">
+        <p>Weather Conditions</p>
+        <h3 id="weatherCount">—</h3>
+        <span>Distinct categories</span>
+      </article>
+      <article class="stat-card">
+        <p>Accident Patterns</p>
+        <h3 id="patternCount">—</h3>
+        <span>Rules discovered</span>
+      </article>
+      <article class="stat-card">
+        <p>Mining Algorithm</p>
+        <h3 class="algorithm">Apriori</h3>
+        <span>Association rule mining</span>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PROJECT WORKFLOW</p>
+          <h2>How the system works</h2>
+        </div>
+      </div>
+
+      <div class="workflow">
+        <div class="step">
+          <span>01</span>
+          <h3>Accident Data</h3>
+          <p>Collect historical records</p>
+        </div>
+        <div class="step">
+          <span>02</span>
+          <h3>Preprocessing</h3>
+          <p>Clean missing and invalid data</p>
+        </div>
+        <div class="step">
+          <span>03</span>
+          <h3>Pattern Mining</h3>
+          <p>Apply Apriori and K-Means</p>
+        </div>
+        <div class="step">
+          <span>04</span>
+          <h3>Analysis</h3>
+          <p>Display findings and charts</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">ANALYSIS MODULES</p>
+      <h2>Explore the project</h2>
+
+      <div class="module-grid">
+        <article class="module">
+          <span class="module-icon">01</span>
+          <h3>Accident Overview</h3>
+          <p>Summarize accident records and severity.</p>
+        </article>
+        <article class="module">
+          <span class="module-icon">02</span>
+          <h3>Association Rules</h3>
+          <p>Discover combinations using support, confidence and lift.</p>
+        </article>
+        <article class="module">
+          <span class="module-icon">03</span>
+          <h3>Cluster Analysis</h3>
+          <p>Group similar accident records using K-Means.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="filters-section">
+      <h2>Filter Accident Patterns</h2>
+      <p>Select conditions to find matching patterns.</p>
+    
+      <div class="filters-grid">
+        <div class="filter-group">
+          <label for="weatherFilter">Weather Condition</label>
+          <select id="weatherFilter">
+            <option value="All">All Weather</option>
+            <option value="Rain">Rain</option>
+            <option value="Fog">Fog</option>
+            <option value="Clear">Clear</option>
+          </select>
+        </div>
+  <button id="resetFilters" type="button">Reset Filters</button>
+
+    
+        <div class="filter-group">
+          <label for="roadFilter">Road Condition</label>
+          <select id="roadFilter">
+            <option value="All">All Roads</option>
+            <option value="Wet">Wet</option>
+            <option value="Dry">Dry</option>
+          </select>
+        </div>
+    
+        <div class="filter-group">
+          <label for="severityFilter">Accident Severity</label>
+          <select id="severityFilter">
+            <option value="All">All Severities</option>
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+          </select>
+        </div>
+      </div>
+    </section>    
+    
+    <section class="patterns-section">
+      <h2>Apriori Accident Patterns</h2>
+      <p>Frequent combinations discovered in the accident dataset.</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Pattern</th>
+              <th>Records</th>
+              <th>Support</th>
+            </tr>
+          </thead>
+          <tbody id="patternsTable">
+            <tr>
+              <td colspan="3">Loading patterns...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="patterns-section">
+      <h2>Association Rules</h2>
+      <p>Discover relationships between accident conditions using support, confidence, and lift.</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>If Condition</th>
+              <th>Then Condition</th>
+              <th>Support</th>
+              <th>Confidence</th>
+              <th>Lift</th>
+            </tr>
+          </thead>
+          <tbody id="rulesTable">
+            <tr>
+              <td colspan="5">Loading association rules...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+<section class="charts-section">
+  <h2>Accident Analytics Charts</h2>
+  <p>Visual analysis of accident records.</p>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3>Accident Severity</h3>
+      <canvas id="severityChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <h3>Weather Conditions</h3>
+      <canvas id="weatherChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <h3>Road Conditions</h3>
+      <canvas id="roadChart"></canvas>
+    </div>
+  </div>
+</section>
+
+
+    <footer>
+      Traffic Accident Pattern Mining · BCA Data Mining Project
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

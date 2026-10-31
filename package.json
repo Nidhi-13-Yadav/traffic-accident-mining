@@ -1,0 +1,22 @@
+
+{
+  "name": "traffic-accident-mining",
+  "version": "1.0.0",
+  "description": "A web-based Traffic Accident Pattern Mining project using Apriori and association rules",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "data-mining",
+    "apriori",
+    "traffic-accidents",
+    "association-rules"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
